@@ -8,6 +8,7 @@ import 'app_colors.dart';
 
 class AppStyles {
   static TextStyle loginTiltle =TextStyle(
+    color: AppColors.customBlackColor,
     fontWeight: FontWeight.bold,
     fontSize: 50.sp,
     fontFamily: "Segoe UI",
@@ -17,6 +18,12 @@ class AppStyles {
     fontSize: 18.sp,
     fontFamily: "Segoe UI",
     color: Colors.white,
+  );
+
+  static TextStyle homeScreenTitle = GoogleFonts.balooThambi2(
+    color: AppColors.customBlackColor,
+    fontWeight: FontWeight.w600,
+    fontSize: 30.sp,
   );
 
 

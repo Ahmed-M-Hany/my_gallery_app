@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'Features/home/presentation/manger/cubit/home_cubit.dart';
 import 'Features/home/presentation/views/home_screen.dart';
 import 'Features/login/presentation/manger/cubit/login_cubit.dart';
 import 'Features/login/presentation/views/login_screen.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<LoginCubit>(create: (context) =>  LoginCubit(),),
+          BlocProvider<HomeCubit>(create: (context) =>  HomeCubit(),),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,

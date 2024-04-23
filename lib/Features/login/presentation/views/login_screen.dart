@@ -70,7 +70,7 @@ class LoginForm extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Center(
-                    child: Text("Log In",style: AppStyles.loginTiltle.copyWith(
+                    child: Text("LOG IN",style: AppStyles.loginTiltle.copyWith(
                       fontSize: 30.sp,
                     ),),
                   ),
@@ -84,6 +84,11 @@ class LoginForm extends StatelessWidget {
                       color: Colors.white,
                     ),
                     child: TextFormField(
+                      // initialValue: "lilla91@example.net",
+                      controller: cubit.emailController,
+                      onChanged: (value){
+                        cubit.emailController.text=value;
+                      },
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -107,6 +112,11 @@ class LoginForm extends StatelessWidget {
                       borderRadius: BorderRadius.circular(44.r),
                     ),
                     child: TextFormField(
+                      // initialValue: "password",
+                      controller: cubit.passwordController,
+                      onChanged: (value){
+                        cubit.passwordController.text=value;
+                      },
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -144,7 +154,11 @@ class submitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: (){},
+        onPressed: (){
+          BlocProvider.of<LoginCubit>(context).login(
+            context: context,
+          );
+        },
         style: TextButton.styleFrom(
           backgroundColor: AppColors.customBlueColor,
           padding: EdgeInsets.symmetric(
